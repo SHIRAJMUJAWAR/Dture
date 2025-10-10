@@ -8,6 +8,7 @@ import Rooms from './components/Rooms'
 import Profile from './components/Profile'
 import Explore from './components/Explore'
 import Trend from './components/Trend'
+import CreateDebates from './components/CreateDebates'
 
 function App() {
  
@@ -17,12 +18,13 @@ function App() {
        <Navbar></Navbar>
      
         <Routes>
-        <Route path="/" element={<Home />} />        {/* Default route */}
-        <Route path="/feed" element={< Feed />} />  {/* About page */}
-        <Route path="/rooms" element={<Rooms/>} /> {/* Contact page */}
+        <Route path="/" element={<Home />} />       
+        <Route path="/feed" element={< Feed />} />  
+        <Route path="/rooms" element={<Rooms/>} />  
         <Route path="/proflie" element={<Profile/>} /> 
          <Route path="/explore" element={<Explore/>}/>
           <Route path="/trend" element={<Trend/>}/> 
+          <Route path="/create" element={<CreateDebates/>}/> 
       </Routes>
     </>
   )

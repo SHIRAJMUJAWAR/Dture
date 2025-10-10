@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+import CreateDebates from "./CreateDebates"
 import Feed from "./Feed"
 
  
@@ -25,11 +27,16 @@ const Rooms = () => {
     <Feed></Feed> </div>
 
   <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"  >
-    Ended Debates </div>
-
-  <div className="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"  >
-    Mine Deabtes</div>
-</div>
+ 
+    </div>
+ 
+  <div className="tab-pane fade mb-10" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"  >
+    <div className="text-3xl mt-3"> 
+   <Link to="/create" > <button className='bg-blue-600 w-90 h-20 rounded-5 border text-black font-semibold mt-10'>Create Your Debates</button></Link>
+   </div>
+    </div>
+</div>  
+    
     </div>
   )
 }

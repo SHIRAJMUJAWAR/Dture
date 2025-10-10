@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
  const Navbar = () => {
    return (
-     <div className=" flex flex-row items-center justify-center bg-black gap-90" > 
+     <div className=" flex flex-row items-center justify-center bg-black gap-60" > 
         <img src="/logo.jpg" alt="" className="w-15 h-15 flex flex-row ml-0" /> 
       <header className="d-flex justify-content-center  text-2xl py-3">
     <ul className="nav nav-pills">
@@ -16,8 +16,13 @@ import { Link } from 'react-router-dom'
        <li className="nav-item mr-9"><a href="#" className="nav-link "><Link className="no-underline" to="/explore">Explore</Link></a>
       </li> <li className="nav-item mr-9"><a href="#" className="nav-link" > <Link className="no-underline" to="/rooms">Room</Link> </a>
       </li>  </ul> 
-      </header>
+      </header> 
+       <div className="text-xl mt-3 flex flex-row items-center justify-center gap-4"> 
+   <Link to="/create" > <button className='bg-blue-600 w-55 h-10 rounded-5 border text-black  font-semibold mt-10'>Create Your Debates</button></Link>
         <Link className="no-underline" to="/proflie"><CgProfile size={40}  className="text-white ml-auto mr-4" /></Link>   
+
+   </div>
+ 
        
      </div>
    )
