@@ -1,43 +1,98 @@
- 
+import React, { useState, useContext } from "react";
+import { DebateContext  } from "../DebateContext";
 
 const CreateDebates = () => {
-  return (
-    <div className="container text-center mt-1  ml-500">  
-    <div className="items-center justify-center bg-black text-white p-10 rounded-2xl space-y-5 mt-3 mb-10" >
-        <div className="w-150 border-1 h-80 bg-gray-900 rounded-2xl object-cover flex flex-col items-center ml-85  "  > 
-          <img src= '' alt="" />
-        </div>
-      <div className="mb-3 items-center text-4xl font-bold ml-70 mr-50 mt-15">
-  <h1> </h1>
-  <input   className="form-control w-170 text-2xl h-20 " id="exampleFormControlInput1" placeholder="name@example.com"/>
-</div>
-<div className="mb-3 text-2xl font-bold ml-70 mr-50 mt-15">
- <h1> </h1>
-  <textarea className="form-control w-170  "  rows="10"></textarea>
-</div> 
-<div className="container text-center mt-1  ml-50 ">
-          <ul className="nav nav-pills ml-20  gap-50 text-3xl bg-black p-3 mr-20  rounded-2xl" id="pills-tab" role="tablist">
-  <li className="nav-item ml-40" role="presentation">
-    <button className="nav-link active"  data-bs-toggle="pill"   type="button" role="tab"   aria-selected="true">
-        24 Hours</button>
-  </li>
-  <li className="nav-item" role="presentation">
-    <button className="nav-link"   data-bs-toggle="pill"  type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-        3 Days</button>
-  </li>
-  <li className="nav-item" role="presentation">
-    <button className="nav-link "  data-bs-toggle="pill"  type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
-        7 Days</button>
-  </li>
-  
-</ul>
-</div>
-  <div className="text-4xl"> 
-   <button className='bg-blue-600 w-95 h-20 rounded-5  font-semibold mt-10'>Create Debate</button>
-   </div>
-    </div>
-     </div>
-  )
-}
+  const { debates, addDebate } = useContext(DebateContext);
 
-export default CreateDebates
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [duration, setDuration] = useState("24 Hours");
+  const [image, setImage] = useState<string | null>(null);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setImage(URL.createObjectURL(e.target.files[0]));
+    }
+  };
+
+  const handleAddDebate = () => {
+    if (!name.trim() || !description.trim()) return;
+
+    const newDebate: Debate = {
+      id: Date.now(),
+      name,
+      description,
+      duration,
+      image,
+    };
+
+    addDebate(newDebate);
+
+    setName("");
+    setDescription("");
+    setDuration("24 Hours");
+    setImage(null);
+  };
+
+  return (
+    <div className="container text-center mt-1">
+      <input
+        className="form-control w-170 text-2xl h-20"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <textarea
+        className="form-control w-170"
+        rows={10}
+        placeholder="Description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+        className="form-control w-170"
+      />
+      <ul className="nav nav-pills gap-50 text-3xl bg-black p-3 rounded-2xl">
+        {["24 Hours", "3 Days", "7 Days"].map((d) => (
+          <li className="nav-item" key={d}>
+            <button
+              className={`nav-link ${duration === d ? "active" : ""}`}
+              onClick={() => setDuration(d)}
+            >
+              {d}
+            </button>
+          </li>
+        ))}
+      </ul>
+      <button
+        className="bg-blue-600 w-95 h-20 rounded-5 font-semibold mt-10"
+        onClick={handleAddDebate}
+      >
+        Create Debate
+      </button>
+
+      {/* Show debates */}
+      <div className="mt-10 text-white">
+        {debates.map((debate) => (
+          <div key={debate.id} className="bg-gray-800 p-5 rounded-2xl my-3">
+            {debate.image && (
+              <img
+                src={debate.image}
+                alt={debate.name}
+                className="w-40 h-40 object-cover rounded-xl mb-3"
+              />
+            )}
+            <h2 className="text-2xl font-bold">{debate.name}</h2>
+            <p>{debate.description}</p>
+            <span className="text-sm">{debate.duration}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default CreateDebates;
