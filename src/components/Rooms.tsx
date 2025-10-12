@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import CreateDebates from "./CreateDebates"
 import Feed from "./Feed"
+import { FaPlus } from "react-icons/fa"
 
  
 
@@ -31,8 +32,9 @@ const Rooms = () => {
     </div>
  
   <div className="tab-pane fade mb-10" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"  >
-    <div className="text-3xl mt-3"> 
-   <Link to="/create" > <button className='bg-blue-600 w-90 h-20 rounded-5 border text-black font-semibold mt-10'>Create Your Debates</button></Link>
+    <div className="text-3xl mt-3 ml-120"> 
+   <Link to="/create" > <button className='bg-blue-600 w-90 h-15 rounded-5 border text-white font-semibold mt-10 flex flex-row items-center justify-center'> 
+    <FaPlus className='mt-1 mr-2'/>Create Your Debates</button></Link>
    </div>
     </div>
 </div>  

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
-import { DebateContext  } from "../DebateContext";
+import { DebateContext } from "../DebatesContext";
+ 
 
 const CreateDebates = () => {
   const { debates, addDebate } = useContext(DebateContext);
@@ -36,26 +37,31 @@ const CreateDebates = () => {
 
   return (
     <div className="container text-center mt-1">
-      <input
-        className="form-control w-170 text-2xl h-20"
+      <div className="m-10 text-2xl ml-52 mr-52  "> 
+         <input
+          className=" bg-black p-3  w-220 rounded-xl border-gray-600"
         placeholder="Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
+      </div>
+      <div className="m-10 text-xl ml-52 mr-52"> 
       <textarea
-        className="form-control w-170"
+        className=" bg-black p-3 h-90 w-220 rounded-xl"
         rows={10}
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-      />
-      <input
+      /> </div>
+      <div className="m-10 text-xl ml-59 mr-59"> 
+        <input
         type="file"
         accept="image/*"
         onChange={handleImageChange}
-        className="form-control w-170"
+        className=" bg-black p-3  w-190 rounded-xl mb-10"
       />
-      <ul className="nav nav-pills gap-50 text-3xl bg-black p-3 rounded-2xl">
+       </div>
+      <ul className="nav nav-pills gap-40 text-3xl bg-black p-3 rounded-2xl mt-20 mb-5 ml-25 mr-25 flex  justify-center" id="pills-tab" role="tablist">
         {["24 Hours", "3 Days", "7 Days"].map((d) => (
           <li className="nav-item" key={d}>
             <button
@@ -67,12 +73,14 @@ const CreateDebates = () => {
           </li>
         ))}
       </ul>
-      <button
-        className="bg-blue-600 w-95 h-20 rounded-5 font-semibold mt-10"
+       <div className="text-3xl">
+        <button
+        className="bg-blue-600 w-95 h-18 rounded-5 font-semibold mt-10"
         onClick={handleAddDebate}
       >
         Create Debate
       </button>
+       </div>
 
       {/* Show debates */}
       <div className="mt-10 text-white">

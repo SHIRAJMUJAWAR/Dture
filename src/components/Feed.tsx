@@ -1,4 +1,5 @@
-import Debate from "./Debate"
+ 
+import FeedDebates from './sub-components/FeedDebates'
 
  
 const Feed = () => {
@@ -6,7 +7,9 @@ const Feed = () => {
     <div>
        <div  className="container text-center">
   <div  className=" flex flex-col   ">
-    <div  className="col mb-5"><Debate></Debate></div>
+    <div  className="col mb-5">
+      <FeedDebates/> 
+      </div>
   
   </div>
 </div>

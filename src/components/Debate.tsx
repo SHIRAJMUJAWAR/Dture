@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { IoIosPeople } from "react-icons/io";
-import { DebateContext } from "../DebateContext";
+import { DebateContext } from "../DebatesContext";
+ 
 
 const Debate = () => {
   const { debates } = useContext(DebateContext); // get debates array
