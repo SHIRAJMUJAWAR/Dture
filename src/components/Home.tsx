@@ -1,9 +1,11 @@
-import React from 'react'
+ import Body from './HomeComp/Body'
 
 const Home = () => {
   return (
-    <div>
-      
+    <div className='bg-black'>
+      <div  >
+      <Body></Body>
+    </div>
     </div>
   )
 }

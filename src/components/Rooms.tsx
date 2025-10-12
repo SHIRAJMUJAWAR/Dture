@@ -7,7 +7,7 @@ import { FaPlus } from "react-icons/fa"
 
 const Rooms = () => {
   return (
-      <div className="container text-center mt-1  ml-500">
+      <div className="container text-center justify-center mt-1  ml-500">
       <ul className="nav nav-pills ml-25  gap-50 text-2xl bg-black p-3 mr-20  rounded-2xl" id="pills-tab" role="tablist">
   <li className="nav-item ml-40" role="presentation">
     <button className="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Active</button>

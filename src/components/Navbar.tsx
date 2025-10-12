@@ -11,10 +11,10 @@ import { Link } from 'react-router-dom'
     setActive(path);
   };
    return (
-     <div className=" flex flex-row items-center justify-center bg-black gap-55" > 
+     <div className=" flex flex-row items-center justify-center bg-black gap-55 sticky top-0 " > 
         <img src="/logo.jpg" alt="" className="w-15 h-15 flex flex-row ml-0" /> 
       <header className="d-flex justify-content-center  text-2xl py-3">
-       <ul className="nav nav-pills flex space-x-4 text-white gap-8 ">
+       <ul className="nav nav-pills flex space-x-4 text-white gap-8 bg-black">
       <li className="nav-item text-white">
         <Link
           to="/"
