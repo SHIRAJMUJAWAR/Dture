@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import CreateDebates from "./CreateDebates"
 import Feed from "./Feed"
 import { FaPlus } from "react-icons/fa"
+import Active from "./sub-components/Active"
 
  
 
@@ -22,10 +23,7 @@ const Rooms = () => {
 </ul>
 <div className="tab-content" id="pills-tabContent">
   <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"  >
-    
-    Active Debates
-    <br />
-    <Feed></Feed> </div>
+    <Active></Active> </div>
 
   <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"  >
  
