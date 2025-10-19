@@ -40,7 +40,7 @@ const CreateDebates = () => {
       <div className="m-10 text-2xl ml-52 mr-52  "> 
          <input
           className=" bg-black p-3  w-220 rounded-xl border-gray-600"
-        placeholder="Name"
+        placeholder="Debate Topic?"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
@@ -75,30 +75,13 @@ const CreateDebates = () => {
       </ul>
        <div className="text-3xl">
         <button
-        className="bg-blue-600 w-95 h-18 rounded-5 font-semibold mt-10"
+        className="bg-blue-600 w-95 h-18 rounded-5 font-semibold mt-10 mb-10 "
         onClick={handleAddDebate}
       >
         Create Debate
       </button>
        </div>
-
-      {/* Show debates */}
-      <div className="mt-10 text-white">
-        {debates.map((debate) => (
-          <div key={debate.id} className="bg-gray-800 p-5 rounded-2xl my-3">
-            {debate.image && (
-              <img
-                src={debate.image}
-                alt={debate.name}
-                className="w-40 h-40 object-cover rounded-xl mb-3"
-              />
-            )}
-            <h2 className="text-2xl font-bold">{debate.name}</h2>
-            <p>{debate.description}</p>
-            <span className="text-sm">{debate.duration}</span>
-          </div>
-        ))}
-      </div>
+      
     </div>
   );
 };

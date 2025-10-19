@@ -1,5 +1,6 @@
 import { CiSearch } from "react-icons/ci"
-import Debate from "./Debate"
+import EnterDebate from "./sub-components/EnterDebate"
+ 
 
 const Explore = () => {
   return (
@@ -16,7 +17,7 @@ const Explore = () => {
       />
       </div>
     
-    <div  className="col mb-5"><Debate></Debate></div>
+    <div  className="col mb-5"> <EnterDebate></EnterDebate></div>
    
   </div>
 </div>
