@@ -17,7 +17,7 @@ const Explore = () => {
       />
       </div>
     
-    <div  className="col mb-5"> <EnterDebate></EnterDebate></div>
+    <div  className="col mb-5">  </div>
    
   </div>
 </div>

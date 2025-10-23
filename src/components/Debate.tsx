@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { IoIosPeople } from "react-icons/io";
 import { DebateContext } from "../DebatesContext";
+import { Link } from "react-router-dom";
  
 
 const Debate = () => {
@@ -35,9 +36,9 @@ const Debate = () => {
             </li>
           </ul>
           <div className="card-body bg-black text-white">
-            <button className="bg-blue-600 w-full h-10 rounded text-2xl font-bold">
+           <Link to='/entercreate'>  <button className="bg-blue-600 w-full h-10 rounded text-2xl font-bold"> 
               Enter Debate
-            </button>
+            </button></Link>
           </div>
         </div>
       ))}

@@ -6,13 +6,14 @@ import { IoSend } from "react-icons/io5";
  const EnterDebate = () => {
   const { debates } = useContext(DebateContext); // get debates array
 
-   return (
+   return ( 
+    <div className=""> 
     <div className="w-full h-180 bg-black  rounded-lg mb-5 border-1 border-gray-600 p-1">
        
       {debates.map((debate) => ( <div>
  
     <div className="  mt-1 text-black w-full h-20 bg-blue-400 rounded-lg flex flex-row items-center object-cover ">
-        <img src={debate.image} className="ml-10 rounded-4xl" alt="" width={50} height={60} />
+        <img src={`${debate.image}`} className="ml-10 rounded-4xl" alt="" width={50} height={60} />
 
          <h1 className="ml-4">{debate.name}</h1> 
          
@@ -35,7 +36,7 @@ import { IoSend } from "react-icons/io5";
       ))}
       
     </div>
-     
+     </div>
    )
  }
  

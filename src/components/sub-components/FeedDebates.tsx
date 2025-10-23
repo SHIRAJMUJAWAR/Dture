@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { IoIosPeople } from "react-icons/io";
 import { DebateContext } from "../../DebatesContext";
+import { Link } from "react-router-dom";
 
 const FeedDebate = () => {
   const { debates, addActiveDebate } = useContext(DebateContext);
@@ -38,12 +39,13 @@ const FeedDebate = () => {
             </li>
           </ul>
           <div className="card-body bg-black text-white">
+              <Link to='/entercreate'>
             <button
-              className="bg-blue-600 w-full h-10 rounded text-2xl font-bold"
+              className="bg-blue-600 w-full h-10 rounded text-2xl font-bold text-white"
               onClick={() => handleEnterDebate(debate)}
             >
-              Enter Debate
-            </button>
+             <Link to='/entercreate'>Enter Debate</Link>  
+            </button></Link>
           </div>
         </div>
       ))}

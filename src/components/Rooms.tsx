@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom"
-import CreateDebates from "./CreateDebates"
-import Feed from "./Feed"
 import { FaPlus } from "react-icons/fa"
 import Active from "./sub-components/Active"
 

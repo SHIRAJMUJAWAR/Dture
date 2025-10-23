@@ -46,7 +46,7 @@ import { Link } from 'react-router-dom'
           className={`nav-link no-underline text-white${
             active === "/trend" ? " active font-semibold" : "text-black"
           }`}
-        >
+        > 
           Trend
         </Link>
       </li>
