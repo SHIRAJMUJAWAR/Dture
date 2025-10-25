@@ -25,7 +25,7 @@ function App() {
          <Route path="/explore" element={<Explore/>}/> 
           <Route path="/trend" element={<Trend/>}/> 
           <Route path="/create" element={<CreateDebates/>}/> 
-       <Route path="/entercreate" element={ <EnterDebate/>}/> 
+        <Route path="/entercreate/:id" element={<EnterDebate />} />
       </Routes>
     </>
   )

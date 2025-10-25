@@ -1,66 +1,76 @@
 import { useContext } from "react";
 import { DebateContext } from "../../DebatesContext";
- 
 import { IoIosPeople } from "react-icons/io";
 import { IoChatbubbles } from "react-icons/io5";
 
 const Active = () => {
-const { activeDebates, removeActiveDebate } = useContext(DebateContext);
+  const { activeDebates, removeActiveDebate } = useContext(DebateContext);
 
   if (activeDebates.length === 0) {
     return (
-            <div className="items-center justify-center flex flex-col mt-30">
-                 < IoChatbubbles size={100} className="text-green-600"/>
-                  <h1>No active debates rooms found</h1>
-                  <p className="text-gray-500">join a debates to see active rooms</p>
-                 
-               </div>
+      <div className="flex flex-col items-center justify-center mt-40 text-center px-4">
+        <IoChatbubbles size={100} className="text-green-400 mb-4" />
+        <h1 className="text-2xl font-bold text-white mb-2">
+          No active debate rooms found
+        </h1>
+        <p className="text-gray-400">
+          Join a debate to see active rooms
+        </p>
+      </div>
     );
   }
 
-return (
-<div className="flex flex-wrap gap-5 justify-center mt-5">
+  return (
+    <div className="flex flex-wrap gap-6 justify-center mt-8 px-4">
       {activeDebates.map((debate) => (
         <div
           key={debate.id}
-          className="card bg-black text-white rounded-2xl"
-          style={{ width: "25rem", height: "30rem" }}
+          className="relative bg-black border border-green-400/30 text-white 
+                     rounded-tl-none rounded-tr-2xl rounded-bl-2xl rounded-br-2xl 
+                     shadow-[0_0_15px_3px_rgba(74,222,128,0.3)] 
+                     hover:shadow-[0_0_25px_5px_rgba(74,222,128,0.6)] 
+                     transition-all duration-300 overflow-hidden"
+          style={{ width: "25rem", height: "32rem" }}
         >
           {debate.image && (
             <img
               src={debate.image}
-              className="card-img-top object-cover h-40 w-full rounded-t-2xl"
+              className="object-cover h-40 w-full rounded-tr-2xl"
               alt={debate.name}
             />
           )}
-          <div className="card-body bg-black text-white">
-            <h5 className="card-title">{debate.name}</h5>
-            <p className="card-text h-14 mt-2">{debate.description}</p>
-             
+
+          <div className="p-5">
+            <h5 className="text-xl font-bold text-green-400">{debate.name}</h5>
+            <p className="text-gray-300 mt-2 line-clamp-3">
+              {debate.description}
+            </p>
           </div>
-          <ul className="list-group list-group-flush bg-black text-white">
-            <li><p className="list-group list-group-flush bg-black text-white">Duration: {debate.duration}</p></li>
-            <li className="list-group-item font-bold bg-black text-white">
-              Created by: Shiraj Mujawar
-              <button className="bg-green-600 ml-2 pr-2 pl-2 pt-1 pb-1 rounded text-white">
-                <IoIosPeople /> Joined
+
+          <ul className="px-5 text-sm text-gray-400 space-y-2">
+            <li>
+              Duration: <span className="text-green-300">{debate.duration}</span>
+            </li>
+            <li className="font-semibold text-white flex items-center justify-between">
+              Created by: <span className="text-green-400">Shiraj Mujawar</span>
+              <button className="bg-green-600 px-3 py-1 rounded flex items-center gap-1 text-white hover:bg-green-500 transition-all">
+                <IoIosPeople size={18} /> Joined
               </button>
             </li>
           </ul>
-          <div className="card-body bg-black text-white">
-              <button
-            onClick={() => removeActiveDebate(debate.id)}
-            className="mt-5 bg-red-600 w-full py-2 rounded text-lg font-bold"
-          >
-            Leave Debate
-        </button>
+
+          <div className="absolute bottom-0 left-0 w-full p-4">
+            <button
+              onClick={() => removeActiveDebate(debate.id)}
+              className="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-2 rounded-xl 
+                         shadow-[0_0_10px_2px_rgba(255,0,0,0.5)] transition-all duration-300"
+            >
+              Leave Debate
+            </button>
           </div>
         </div>
       ))}
     </div>
-   
-
-   
   );
 };
 

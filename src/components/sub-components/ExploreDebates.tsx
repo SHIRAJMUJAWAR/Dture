@@ -2,58 +2,99 @@ import { useContext } from "react";
 import { IoIosPeople } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { DebateContext } from "../../DebatesContext";
-import { HiH1 } from "react-icons/hi2";
 import { IoCompass } from "react-icons/io5";
- 
 
 const ExploreDebate = () => {
-  const { debates } = useContext(DebateContext); // get debates array
+  const {
+    debates,
+    activeDebates,
+    addActiveDebate,
+    removeActiveDebate,
+  } = useContext(DebateContext);
 
-  return ( <> 
-  { debates.length >0 ? <div className="flex flex-wrap gap-5 justify-center mt-5">
-      {debates.map((debate) => (
-        <div
-          key={debate.id}
-          className="card bg-black text-white rounded-2xl"
-          style={{ width: "25rem", height: "35rem" }}
-        >
-          {debate.image && (
-            <img
-              src={debate.image}
-              className="card-img-top object-cover h-40 w-full rounded-t-2xl"
-              alt={debate.name}
-            />
-          )}
-          <div className="card-body bg-black text-white">
-            <h5 className="card-title">{debate.name}</h5>
-            <p className="card-text h-14 mt-2">{debate.description}</p>
-             
-          </div>
-          <ul className="list-group list-group-flush bg-black text-white">
-            <li><p className="list-group list-group-flush bg-black text-white">Duration: {debate.duration}</p></li>
-            <li className="list-group-item font-bold bg-black text-white">
-              Created by: Shiraj Mujawar
-              <button className="bg-green-600 ml-2 pr-2 pl-2 pt-1 pb-1 rounded text-white">
-                <IoIosPeople /> Joined
-              </button>
-            </li>
-          </ul>
-          <div className="card-body bg-black text-white">
-           <Link to='/entercreate'>  <button className="bg-green-600 text-xl w-full h-10 rounded text-2xl font-bold"> 
-              Enter Debate
-            </button></Link>
-          </div>
+  const isActive = (id: number) =>
+    activeDebates.some((debate) => debate.id === id);
+
+  return (
+    <>
+      {debates.length > 0 ? (
+        <div className="flex flex-wrap gap-5 justify-center mt-20">
+          {debates.map((debate) => (
+            <div
+              key={debate.id}
+              className="bg-black text-white rounded-2xl border border-green-300 
+                         shadow-[0_0_25px_4px_rgba(134,239,172,0.4)] 
+                         hover:shadow-[0_0_35px_6px_rgba(134,239,172,0.7)] 
+                         transition-all duration-300 transform hover:-translate-y-1"
+              style={{ width: "25rem", height: "35rem" }}
+            >
+              {/* Debate Image */}
+              {debate.image && (
+                <img
+                  src={debate.image}
+                  className="object-cover h-40 w-full rounded-t-2xl"
+                  alt={debate.name}
+                />
+              )}
+
+              {/* Debate Info */}
+              <div className="p-4">
+                <h5 className="text-xl font-bold text-green-300">
+                  {debate.name}
+                </h5>
+                <p className="text-gray-400 mt-2 h-16 overflow-hidden">
+                  {debate.description}
+                </p>
+              </div>
+
+              {/* Creator + Duration */}
+              <div className="border-t border-green-300 p-4 text-sm">
+                <p>⏳ Duration: {debate.duration}</p>
+                <p className="font-semibold mt-2">
+                  Created by:{" "}
+                  <span className="text-green-400">Shiraj Mujawar</span>
+                </p>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex justify-between items-center px-4 pb-4">
+                <button
+                  onClick={() =>
+                    isActive(debate.id)
+                      ? removeActiveDebate(debate.id)
+                      : addActiveDebate(debate)
+                  }
+                  className={`flex items-center gap-2 px-3 py-1 rounded-md text-white font-medium
+                    ${
+                      isActive(debate.id)
+                        ? "bg-green-700"
+                        : "bg-green-600 hover:bg-green-500"
+                    }
+                    transition-all duration-300`}
+                >
+                  <IoIosPeople />
+                  {isActive(debate.id) ? "Joined" : "Join"}
+                </button>
+
+                {/* Enter Debate Button */}
+                <Link to={`/entercreate/${debate.id}`}>
+                  <button className="bg-green-600 hover:bg-green-500 text-white text-sm font-semibold px-4 py-2 rounded-md transition-all duration-300">
+                    Enter Debate
+                  </button>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div> :
-          <div className="items-center justify-center flex flex-col mt-20">
-           <IoCompass  size={100} className="text-green-600"/>
-            <h1>Explore Debates</h1>
-            <p className="text-gray-500">Discover trending debates and join the conversaton </p>
-           
-         </div>
-    }
- 
+      ) : (
+        <div className="flex flex-col items-center justify-center mt-40 text-center">
+          <IoCompass size={100} className="text-green-500 mb-4" />
+          <h1 className="text-2xl font-semibold">Explore Debates</h1>
+          <p className="text-gray-400 mt-2">
+            Discover trending debates and join the conversation!
+          </p>
+        </div>
+      )}
     </>
   );
 };

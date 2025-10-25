@@ -73,7 +73,7 @@ const CreateDebates = () => {
         {["24 Hours", "3 Days", "7 Days"].map((d) => (
           <li className="text-white nav-item" key={d}>
             <button
-              className={`text-white nav-link ${duration === d ? "actives text-white" : ""}`}
+              className={`text-white nav-link ${duration === d ? "actives text-white  actives font-semibold shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]   hover:shadow-[0_0_35px_6px_rgba(134,239,172,0.7 transition-all duration-300 transform hover:-translate-y-1" : ""}`}
               onClick={() => setDuration(d)}
             >
               {d}
@@ -83,7 +83,7 @@ const CreateDebates = () => {
       </ul>
        <div className="text-3xl">
         <button
-        className=" actives w-85 h-15 rounded-5 font-semibold mt-8 mb-8 "
+        className=" actives w-85 h-15 rounded-5 font-semibold mt-8 mb-8  actives font-semibold shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]   hover:shadow-[0_0_35px_6px_rgba(134,239,172,0.7 transition-all duration-300 transform hover:-translate-y-1"
         onClick={handleAddDebate}
       >
         Create Debate

@@ -1,71 +1,70 @@
 import { useContext } from "react";
-import { IoIosChatboxes, IoIosPeople } from "react-icons/io";
 import { DebateContext } from "../../DebatesContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { IoIosChatboxes, IoIosPeople } from "react-icons/io";
 import { MdOutlineExplore } from "react-icons/md";
 
 const FeedDebate = () => {
   const { debates, addActiveDebate } = useContext(DebateContext);
+  const navigate = useNavigate();
 
   const handleEnterDebate = (debate: any) => {
-    addActiveDebate(debate); // 👈 add to active debates array
+    addActiveDebate(debate); // store in active debates
+    navigate(`/entercreate/${debate.id}`); // go to that debate's page
   };
 
-  return (<> 
-    {debates.length >0 ?<div className="flex flex-wrap gap-5 justify-center mt-5">
+  if (debates.length === 0) {
+    return (<div> <div className="items-center justify-center flex flex-col mt-10">
+       <IoIosChatboxes size={100} className="text-green-600"/> 
+       <h1>All Caught Up!</h1> <p className="text-gray-500"> Looks like youve joined all debates in <br /> your selected categeories. Explore more oR <br /> create your own!</p>
+        <div className="items-center text-3xl text-gray-600 mt-20 ">
+           <Link to="/explore" className="text-white nav-link no-underline " > 
+           <button className="bg-gray-900 p-3 flex flex-row rounded-5 ">
+            <MdOutlineExplore size={30} className="m-1"/> Explore More Debates</button> </Link> </div> 
+            </div>
+             </div>
+
+    )}
+
+  return (
+    <div className="flex flex-wrap gap-5 justify-center mt-5">
       {debates.map((debate) => (
         <div
           key={debate.id}
-          className="card bg-black text-white rounded-2xl border "
+          className="bg-black text-white rounded-2xl border border-gray-700 shadow-[0_0_20px_rgba(134,239,172,0.4)] p-3"
           style={{ width: "25rem", height: "35rem" }}
         >
           {debate.image && (
             <img
               src={debate.image}
-              className="card-img-top object-cover h-40 w-full rounded-t-2xl"
               alt={debate.name}
+              className="object-cover h-40 w-full rounded-t-2xl"
             />
           )}
-          <div className="card-body bg-black text-white">
-            <h5 className="card-title">{debate.name}</h5>
-            <p className="card-text h-14 mt-2">{debate.description}</p>
-             
+          <div className="p-3">
+            <h2 className="text-2xl font-semibold">{debate.name}</h2>
+            <p className="text-gray-400 mt-2 line-clamp-3">
+              {debate.description}
+            </p>
           </div>
-          <ul className="list-group list-group-flush bg-black text-white">
-            <li><p className="text-sm">Duration: {debate.duration}</p></li>
-            <li className="list-group-item font-bold bg-black text-white">
-              Created by: Shiraj Mujawar
-              <button className="bg-green-600 ml-2 pr-2 pl-2 pt-1 pb-1 rounded text-white">
-                <IoIosPeople /> Joined
-              </button>
-            </li>
-          </ul>
-          <div className="card-body bg-black  ">
-              <Link to='/entercreate' className="text-white">
+          <div className="flex justify-between items-center px-3 py-2 border-t border-gray-700">
+            <span className="text-sm">Duration: {debate.duration}</span>
+            <button className="bg-green-600 flex items-center gap-1 px-3 py-1 rounded text-white hover:bg-green-500 transition-all">
+              <IoIosPeople /> Joined
+            </button>
+          </div>
+          <div className="p-3 mt-auto">
             <button
-              className="bg-green-600 w-full h-10 rounded text-2xl font-bold no-underline"
               onClick={() => handleEnterDebate(debate)}
+              className="bg-green-500 hover:bg-green-400 text-white font-bold w-full py-2 rounded-lg text-xl shadow-[0_0_15px_rgba(134,239,172,0.8)] hover:shadow-[0_0_25px_rgba(134,239,172,1)] transition-all"
             >
-             <Link to='/entercreate ' className="text-white no-underline">Enter Debate</Link>  
-            </button></Link>
+              Enter Debate
+            </button>
           </div>
         </div>
       ))}
-    </div>:<div>
-       <div className="items-center justify-center flex flex-col mt-10">
-        <IoIosChatboxes  size={100} className="text-green-600"/>
-         <h1>All Caught Up!</h1>
-         <p className="text-gray-500"> Looks like you`ve joined all debates in <br /> your selected categeories. Explore more oR  <br /> create your own!</p>
-        <div className="items-center text-3xl text-gray-600 mt-20 ">
-          <Link to="/explore"  className="text-white nav-link no-underline  "   > 
-        <button className="bg-gray-900 p-3 flex flex-row rounded-5 "><MdOutlineExplore size={30} className="m-1"/> Explore More Debates</button>
-          </Link>
-        </div>
-      </div>
-      </div>}
-
-      
- </> );
+    </div>
+  );
 };
 
 export default FeedDebate;

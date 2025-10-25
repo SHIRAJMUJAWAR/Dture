@@ -21,8 +21,8 @@ import { Link } from 'react-router-dom'
         <Link
           to="/"
           onClick={() => handleActive("/")}
-          className={`  text-white nav-link no-underline  ${
-            actives === "/" ? " actives font-semibold" : "text-black"
+          className={`  text-white nav-link no-underline  hover:-translate-y-1    hover:-translate-y-1     ${
+            actives === "/" ? " actives font-semibold  actives font-semibold shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]   hover:shadow-[0_0_35px_6px_rgba(134,239,172,0.7 transition-all duration-300 transform  " : "text-black"
           }`}
         >
           Home
@@ -33,8 +33,8 @@ import { Link } from 'react-router-dom'
         <Link
           to="/feed"
           onClick={() => handleActive("/feed")}
-          className={` text-white nav-link no-underline${
-            actives === "/feed" ? " actives font-semibold" : "text-black"
+          className={` text-white nav-link no-underline  hover:-translate-y-1  ${
+            actives === "/feed" ? " actives font-semibold shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]   hover:shadow-[0_0_35px_6px_rgba(134,239,172,0.7 transition-all duration-300 transform " : "text-black"
           }`}
         >
           Feed
@@ -45,8 +45,8 @@ import { Link } from 'react-router-dom'
         <Link
           to="/trend"
           onClick={() => handleActive("/trend")}
-          className={` text-white nav-link no-underline${
-            actives === "/trend" ? " actives font-semibold" : "text-black"
+          className={` text-white nav-link no-underline  hover:-translate-y-1  ${
+            actives === "/trend" ? " actives font-semibold shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]   hover:shadow-[0_0_35px_6px_rgba(134,239,172,0.7 transition-all duration-300 transform " : "text-black"
           }`}
         > 
           Trend
@@ -57,8 +57,8 @@ import { Link } from 'react-router-dom'
         <Link
           to="/explore"
           onClick={() => handleActive("/explore")}
-          className={` text-white nav-link no-underline${
-            actives === "/explore" ? " actives font-semibold" : "text-black"
+          className={` text-white nav-link no-underline  hover:-translate-y-1  ${
+            actives === "/explore" ? " actives font-semibold shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]   hover:shadow-[0_0_35px_6px_rgba(134,239,172,0.7 transition-all duration-300 transform  " : "text-black"
           }`}
         >
           Explore
@@ -69,8 +69,8 @@ import { Link } from 'react-router-dom'
         <Link
           to="/rooms"
           onClick={() => handleActive("/rooms")}
-          className={` text-white nav-link no-underline${
-            actives === "/rooms" ? " actives font-semibold" : "text-black"
+          className={` text-white nav-link no-underline  hover:-translate-y-1    hover:-translate-y-1   ${
+            actives === "/rooms" ? " actives font-semibold  actives font-semibold shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]   hover:shadow-[0_0_35px_6px_rgba(134,239,172,0.7 transition-all duration-300 transform hover:-translate-y-1 " : "text-black"
           }`}
         >
           Rooms
@@ -79,9 +79,14 @@ import { Link } from 'react-router-dom'
     </ul>
     
        <div className="text-xl mt-3 flex flex-row items-center justify-center gap-4"> 
-   <Link to="/create"  className='flex flex-col p-2 nav-link'> <button className='bg-green-600 no-underline flex flex-row w-60 items-center h-10 rounded-5 border text-white justify-center font-semibold mt-10'>
+   <Link to="/create"  className='flex flex-col p-2 nav-link'> <button className='bg-green-600 
+   no-underline flex flex-row w-60 items-center h-10 rounded-5 border text-white justify-center
+    font-semibold mt-10  actives font-semibold shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]  
+     hover:shadow-[0_0_35px_6px_rgba(134,239,172,0.7 transition-all duration-300 transform 
+     hover:-translate-y-1' onClick={()=> handleActive('\create')}>
     <FaPlus className='mt-1 mr-2 no-underline'/>Create Your Debates</button></Link>
-        <Link className="no-underline " to="/proflie"><CgProfile size={40}  className="text-white ml-auto mr-4" /></Link>   
+        <Link className="no-underline " to="/proflie">
+        <CgProfile size={40} onClick={()=> handleActive('\create')}  className="text-white ml-auto mr-4" /></Link>   
 
    </div>
  
