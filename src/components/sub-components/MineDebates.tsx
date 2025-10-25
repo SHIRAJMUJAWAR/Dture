@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { IoIosChatboxes, IoIosPeople } from "react-icons/io";
 import { DebateContext } from "../../DebatesContext";
 import { Link } from "react-router-dom";
-import { MdOutlineExplore } from "react-icons/md";
+import { MdOutlineAddToPhotos } from "react-icons/md";
+ 
 
-const FeedDebate = () => {
+const MineDebate = () => {
   const { debates, addActiveDebate } = useContext(DebateContext);
 
   const handleEnterDebate = (debate: any) => {
@@ -16,7 +17,7 @@ const FeedDebate = () => {
       {debates.map((debate) => (
         <div
           key={debate.id}
-          className="card bg-black text-white rounded-2xl border "
+          className="card bg-black text-white rounded-2xl"
           style={{ width: "25rem", height: "35rem" }}
         >
           {debate.image && (
@@ -40,13 +41,13 @@ const FeedDebate = () => {
               </button>
             </li>
           </ul>
-          <div className="card-body bg-black  ">
+          <div className="  card-body bg-black  ">
               <Link to='/entercreate' className="text-white">
             <button
-              className="bg-green-600 w-full h-10 rounded text-2xl font-bold no-underline"
+              className="bg-green-600  w-full h-10 rounded text-2xl font-bold "
               onClick={() => handleEnterDebate(debate)}
             >
-             <Link to='/entercreate ' className="text-white no-underline">Enter Debate</Link>  
+             <Link to='/entercreate'>Enter Debate</Link>  
             </button></Link>
           </div>
         </div>
@@ -54,12 +55,13 @@ const FeedDebate = () => {
     </div>:<div>
        <div className="items-center justify-center flex flex-col mt-10">
         <IoIosChatboxes  size={100} className="text-green-600"/>
-         <h1>All Caught Up!</h1>
-         <p className="text-gray-500"> Looks like you`ve joined all debates in <br /> your selected categeories. Explore more oR  <br /> create your own!</p>
-        <div className="items-center text-3xl text-gray-600 mt-20 ">
-          <Link to="/explore"  className="text-white nav-link no-underline  "   > 
-        <button className="bg-gray-900 p-3 flex flex-row rounded-5 "><MdOutlineExplore size={30} className="m-1"/> Explore More Debates</button>
-          </Link>
+         <h1>No Debates Are present!</h1>
+         <p className="text-gray-500"> Looks like you`ve not create any Dabates create  your own Debates. </p>
+         <p className="text-gray-500"> Explore more oR  create your own!</p>
+        <div className="items-center text-2xl text-gray-600 mt-5 ">
+             <Link to="/create"  className='flex flex-col p-2 nav-link'> 
+        <button className="bg-black p-3 flex flex-row rounded-5 ">  Create Your Own Debates <MdOutlineAddToPhotos size={30} className="m-1"/></button>
+             </Link>
         </div>
       </div>
       </div>}
@@ -68,4 +70,4 @@ const FeedDebate = () => {
  </> );
 };
 
-export default FeedDebate;
+export default MineDebate;

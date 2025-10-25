@@ -12,7 +12,7 @@ const Debate = () => {
       {debates.map((debate) => (
         <div
           key={debate.id}
-          className="card bg-black text-white rounded-2xl"
+          className="card bg-gray-900  text-white rounded-2xl"
           style={{ width: "25rem", height: "35rem" }}
         >
           {debate.image && (
@@ -22,21 +22,22 @@ const Debate = () => {
               alt={debate.name}
             />
           )}
-          <div className="card-body bg-black text-white">
+          <div className="card-body bg-gray-900  text-white">
             <h5 className="card-title">{debate.name}</h5>
             <p className="card-text h-14 mt-2">{debate.description}</p>
-            <p className="text-sm">Duration: {debate.duration}</p>
+             
           </div>
-          <ul className="list-group list-group-flush bg-black text-white">
-            <li className="list-group-item font-bold bg-black text-white">
+          <ul className="list-group list-group-flush bg-gray-900  text-white">
+            <li><p className="list-group list-group-flush bg-gray-900  text-white">Duration: {debate.duration}</p></li>
+            <li className="list-group-item font-bold bg-gray-900  text-white">
               Created by: Shiraj Mujawar
-              <button className="bg-blue-600 ml-2 pr-2 pl-2 pt-1 pb-1 rounded text-white">
+              <button className="bg-green-600 ml-2 pr-2 pl-2 pt-1 pb-1 rounded text-white">
                 <IoIosPeople /> Joined
               </button>
             </li>
           </ul>
-          <div className="card-body bg-black text-white">
-           <Link to='/entercreate'>  <button className="bg-blue-600 w-full h-10 rounded text-2xl font-bold"> 
+          <div className="card-body bg-gray-900  text-white">
+           <Link to='/entercreate'>  <button className="bg-green-600 text-xl w-full h-10 rounded text-2xl font-bold"> 
               Enter Debate
             </button></Link>
           </div>

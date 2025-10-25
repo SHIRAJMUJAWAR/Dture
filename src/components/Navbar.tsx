@@ -5,22 +5,24 @@ import { FaPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 
  const Navbar = () => {
-    const [active, setActive] = useState("/");
+    const [actives, setActive] = useState("/");
 
   const handleActive = (path :string) => {
     setActive(path);
   };
+  
    return (
-     <div className=" flex flex-row items-center justify-center bg-black gap-55 sticky top-0 " > 
-        <img src="/logo.jpg" alt="" className="w-15 h-15 flex flex-row ml-0" /> 
-      <header className="d-flex justify-content-center  text-2xl py-3">
-       <ul className="nav nav-pills flex space-x-4 text-white gap-8 bg-black">
+     <div className="fixed top-0 z-50 w-full flex items-center gap-[245px] mr-[110px] 
+    font-medium text-[1.2rem] text-gray-300   bg-opacity-35 backdrop-blur-sm border-b border-gray-800   mb-10" > 
+         <Link
+          to="/"     onClick={() => handleActive("/")} > <img src="/logo.png" alt="" className="w-17 h-15 flex flex-row ml-1 rounded-5" /> </Link>
+       <ul className="nav nav-pills flex space-x-4 text-bold text-white gap-8   lg:block">
       <li className="nav-item text-white">
         <Link
           to="/"
           onClick={() => handleActive("/")}
-          className={`nav-link no-underline text-white${
-            active === "/" ? " active font-semibold" : "text-black"
+          className={`  text-white nav-link no-underline  ${
+            actives === "/" ? " actives font-semibold" : "text-black"
           }`}
         >
           Home
@@ -31,8 +33,8 @@ import { Link } from 'react-router-dom'
         <Link
           to="/feed"
           onClick={() => handleActive("/feed")}
-          className={`nav-link no-underline text-white${
-            active === "/feed" ? " active font-semibold" : "text-black"
+          className={` text-white nav-link no-underline${
+            actives === "/feed" ? " actives font-semibold" : "text-black"
           }`}
         >
           Feed
@@ -43,8 +45,8 @@ import { Link } from 'react-router-dom'
         <Link
           to="/trend"
           onClick={() => handleActive("/trend")}
-          className={`nav-link no-underline text-white${
-            active === "/trend" ? " active font-semibold" : "text-black"
+          className={` text-white nav-link no-underline${
+            actives === "/trend" ? " actives font-semibold" : "text-black"
           }`}
         > 
           Trend
@@ -55,8 +57,8 @@ import { Link } from 'react-router-dom'
         <Link
           to="/explore"
           onClick={() => handleActive("/explore")}
-          className={`nav-link no-underline text-white${
-            active === "/explore" ? " active font-semibold" : "text-black"
+          className={` text-white nav-link no-underline${
+            actives === "/explore" ? " actives font-semibold" : "text-black"
           }`}
         >
           Explore
@@ -67,19 +69,19 @@ import { Link } from 'react-router-dom'
         <Link
           to="/rooms"
           onClick={() => handleActive("/rooms")}
-          className={`nav-link no-underline${
-            active === "/rooms" ? " active font-semibold" : "text-black"
+          className={` text-white nav-link no-underline${
+            actives === "/rooms" ? " actives font-semibold" : "text-black"
           }`}
         >
           Rooms
         </Link>
       </li>
     </ul>
-      </header> 
+    
        <div className="text-xl mt-3 flex flex-row items-center justify-center gap-4"> 
-   <Link to="/create"  className='flex flex-col p-2'> <button className='bg-blue-600 flex flex-row w-60 items-center h-10 rounded-5 border text-white justify-center font-semibold mt-10'>
-    <FaPlus className='mt-1 mr-2'/>Create Your Debates</button></Link>
-        <Link className="no-underline" to="/proflie"><CgProfile size={40}  className="text-white ml-auto mr-4" /></Link>   
+   <Link to="/create"  className='flex flex-col p-2 nav-link'> <button className='bg-green-600 no-underline flex flex-row w-60 items-center h-10 rounded-5 border text-white justify-center font-semibold mt-10'>
+    <FaPlus className='mt-1 mr-2 no-underline'/>Create Your Debates</button></Link>
+        <Link className="no-underline " to="/proflie"><CgProfile size={40}  className="text-white ml-auto mr-4" /></Link>   
 
    </div>
  

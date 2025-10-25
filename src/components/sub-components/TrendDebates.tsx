@@ -1,30 +1,20 @@
-import { useContext } from "react";
-import { DebateContext } from "../../DebatesContext";
- 
+ import { useContext } from "react";
 import { IoIosPeople } from "react-icons/io";
-import { IoChatbubbles } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import { DebateContext } from "../../DebatesContext";
+import { HiTrendingUp } from "react-icons/hi";
+ 
 
-const Active = () => {
-const { activeDebates, removeActiveDebate } = useContext(DebateContext);
+const TrendDebate = () => {
+  const { debates } = useContext(DebateContext); // get debates array
 
-  if (activeDebates.length === 0) {
-    return (
-            <div className="items-center justify-center flex flex-col mt-30">
-                 < IoChatbubbles size={100} className="text-green-600"/>
-                  <h1>No active debates rooms found</h1>
-                  <p className="text-gray-500">join a debates to see active rooms</p>
-                 
-               </div>
-    );
-  }
-
-return (
-<div className="flex flex-wrap gap-5 justify-center mt-5">
-      {activeDebates.map((debate) => (
+  return (<>
+   {debates.length >0 ? <div className="flex flex-wrap gap-5 justify-center mt-30">
+      {debates.map((debate) => (
         <div
           key={debate.id}
           className="card bg-black text-white rounded-2xl"
-          style={{ width: "25rem", height: "30rem" }}
+          style={{ width: "25rem", height: "35rem" }}
         >
           {debate.image && (
             <img
@@ -47,21 +37,23 @@ return (
               </button>
             </li>
           </ul>
-          <div className="card-body bg-black text-white">
-              <button
-            onClick={() => removeActiveDebate(debate.id)}
-            className="mt-5 bg-red-600 w-full py-2 rounded text-lg font-bold"
-          >
-            Leave Debate
-        </button>
+          <div className="card-body bg-black  ">
+           <Link to='/entercreate'>  <button className=" text-white bg-green-600 text-xl w-full h-10 rounded font-bold"> 
+              Enter Debate
+            </button></Link>
           </div>
         </div>
       ))}
-    </div>
-   
+    </div> :
+       <div className="items-center justify-center flex flex-col mt-50">
+        < HiTrendingUp  size={100} className="text-green-600"/>
+       <h1>No Trensing Debates</h1>
+        <p className="text-gray-500">  Check back later for hot debates that are <br /> trending</p>
+       </div>
+    }
 
-   
-  );
+ 
+ </>  )
 };
 
-export default Active;
+export default TrendDebate;

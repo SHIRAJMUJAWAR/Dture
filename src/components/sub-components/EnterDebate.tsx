@@ -6,25 +6,24 @@ import { IoSend } from "react-icons/io5";
  const EnterDebate = () => {
   const { debates } = useContext(DebateContext); // get debates array
 
-   return ( 
-    <div className=""> 
-    <div className="w-full h-180 bg-black  rounded-lg mb-5 border-1 border-gray-600 p-1">
+   return (
+    <div className="w-full h-180 bg-black object-cover rounded-lg mb-5 border-1 border-gray-600 p-1">
        
       {debates.map((debate) => ( <div>
  
     <div className="  mt-1 text-black w-full h-20 bg-blue-400 rounded-lg flex flex-row items-center object-cover ">
-        <img src={`${debate.image}`} className="ml-10 rounded-4xl" alt="" width={50} height={60} />
+        <img src={`${debate.image}`} className="ml-5 rounded-4xl w-20 h-20" alt=""  />
 
-         <h1 className="ml-4">{debate.name}</h1> 
-         
-     </div>
-     <div className="flex flex-row p-3 ">
-       <img src={`${debate.image}`} alt="" className="rounded-3xl ml-40" width={100} height={50}/>  
-       <p className="m-20 text-2xl">{debate.description}</p>
+         <h1 className="ml-4 overflow-hidden">{debate.name}</h1> 
+          
+     </div> 
+     <div className="flex flex-row p-2  ">
+       <img src={`${debate.image}`} alt="" className="rounded-3xl ml-40 w-51 h-51" />  
+       <p className="m-20 text-xl break-words whitespace-normal overflow-hidden ">{debate.description}</p>
       
      </div>
      <hr />
-<div className="fixed bottom-0 left-0 w-full  bg-black border-t text-xl border-gray-300 p-3 flex flex-row">
+<div className="fixed bottom-0 left-0 w-full  bg-black border-t text-2xl border-gray-300 p-3 flex flex-row">
     <input
       type="text"
       placeholder="Give your Opinion for this Debate..."
@@ -36,7 +35,7 @@ import { IoSend } from "react-icons/io5";
       ))}
       
     </div>
-     </div>
+     
    )
  }
  

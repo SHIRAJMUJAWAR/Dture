@@ -6,9 +6,10 @@ const Feed = () => {
   return (
     <div>
        <div  className="container text-center">
-  <div  className=" flex flex-col   ">
+  <div  className=" flex flex-col  mt-20 ">
     <div  className="col mb-5">
       <FeedDebates/> 
+    
       </div>
   
   </div>

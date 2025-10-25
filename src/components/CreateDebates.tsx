@@ -1,5 +1,13 @@
 import React, { useState, useContext } from "react";
 import { DebateContext } from "../DebatesContext";
+
+interface Debate {
+  id: number;
+  name: string;
+  description: string;
+  duration: string;
+  image: string | null;
+}
  
 
 const CreateDebates = () => {
@@ -36,10 +44,10 @@ const CreateDebates = () => {
   };
 
   return (
-    <div className="container text-center mt-1">
-      <div className="m-10 text-2xl ml-52 mr-52  "> 
+    <div className="container text-center mt-30 mb-10">
+      <div className="m-10 text-2xl ml-52 mr-52 mb-10 "> 
          <input
-          className=" bg-black p-3  w-220 rounded-xl border-gray-600"
+          className=" bg-gray-900 p-3  w-220 rounded-xl border-gray-600"
         placeholder="Debate Topic?"
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -47,7 +55,7 @@ const CreateDebates = () => {
       </div>
       <div className="m-10 text-xl ml-52 mr-52"> 
       <textarea
-        className=" bg-black p-3 h-90 w-220 rounded-xl"
+        className=" bg-gray-900  p-3 h-90 w-220 rounded-xl"
         rows={10}
         placeholder="Description"
         value={description}
@@ -58,14 +66,14 @@ const CreateDebates = () => {
         type="file"
         accept="image/*"
         onChange={handleImageChange}
-        className=" bg-black p-3  w-190 rounded-xl mb-10"
+        className=" bg-gray-900  p-3  w-190 rounded-xl mb-10"
       />
        </div>
-      <ul className="nav nav-pills gap-40 text-3xl bg-black p-3 rounded-2xl mt-20 mb-5 ml-25 mr-25 flex  justify-center" id="pills-tab" role="tablist">
+      <ul className="nav nav-pills gap-40 text-3xl bg-gray-900  p-3 rounded-2xl mt-20 mb-5 ml-25 mr-25 flex  justify-center" id="pills-tab" role="tablist">
         {["24 Hours", "3 Days", "7 Days"].map((d) => (
-          <li className="nav-item" key={d}>
+          <li className="text-white nav-item" key={d}>
             <button
-              className={`nav-link ${duration === d ? "active" : ""}`}
+              className={`text-white nav-link ${duration === d ? "actives text-white" : ""}`}
               onClick={() => setDuration(d)}
             >
               {d}
@@ -75,7 +83,7 @@ const CreateDebates = () => {
       </ul>
        <div className="text-3xl">
         <button
-        className="bg-blue-600 w-95 h-18 rounded-5 font-semibold mt-10 mb-10 "
+        className=" actives w-85 h-15 rounded-5 font-semibold mt-8 mb-8 "
         onClick={handleAddDebate}
       >
         Create Debate

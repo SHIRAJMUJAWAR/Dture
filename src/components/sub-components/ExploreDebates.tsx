@@ -1,30 +1,21 @@
 import { useContext } from "react";
-import { DebateContext } from "../../DebatesContext";
- 
 import { IoIosPeople } from "react-icons/io";
-import { IoChatbubbles } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import { DebateContext } from "../../DebatesContext";
+import { HiH1 } from "react-icons/hi2";
+import { IoCompass } from "react-icons/io5";
+ 
 
-const Active = () => {
-const { activeDebates, removeActiveDebate } = useContext(DebateContext);
+const ExploreDebate = () => {
+  const { debates } = useContext(DebateContext); // get debates array
 
-  if (activeDebates.length === 0) {
-    return (
-            <div className="items-center justify-center flex flex-col mt-30">
-                 < IoChatbubbles size={100} className="text-green-600"/>
-                  <h1>No active debates rooms found</h1>
-                  <p className="text-gray-500">join a debates to see active rooms</p>
-                 
-               </div>
-    );
-  }
-
-return (
-<div className="flex flex-wrap gap-5 justify-center mt-5">
-      {activeDebates.map((debate) => (
+  return ( <> 
+  { debates.length >0 ? <div className="flex flex-wrap gap-5 justify-center mt-5">
+      {debates.map((debate) => (
         <div
           key={debate.id}
           className="card bg-black text-white rounded-2xl"
-          style={{ width: "25rem", height: "30rem" }}
+          style={{ width: "25rem", height: "35rem" }}
         >
           {debate.image && (
             <img
@@ -48,20 +39,23 @@ return (
             </li>
           </ul>
           <div className="card-body bg-black text-white">
-              <button
-            onClick={() => removeActiveDebate(debate.id)}
-            className="mt-5 bg-red-600 w-full py-2 rounded text-lg font-bold"
-          >
-            Leave Debate
-        </button>
+           <Link to='/entercreate'>  <button className="bg-green-600 text-xl w-full h-10 rounded text-2xl font-bold"> 
+              Enter Debate
+            </button></Link>
           </div>
         </div>
       ))}
-    </div>
-   
-
-   
+    </div> :
+          <div className="items-center justify-center flex flex-col mt-20">
+           <IoCompass  size={100} className="text-green-600"/>
+            <h1>Explore Debates</h1>
+            <p className="text-gray-500">Discover trending debates and join the conversaton </p>
+           
+         </div>
+    }
+ 
+    </>
   );
 };
 
-export default Active;
+export default ExploreDebate;

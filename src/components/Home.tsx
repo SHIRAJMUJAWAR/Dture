@@ -3,7 +3,7 @@
 const Home = () => {
   return (
     <div className='bg-black'>
-      <div  >
+      <div className='mt-18' >
       <Body></Body>
     </div>
     </div>
