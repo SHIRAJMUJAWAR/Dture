@@ -1,5 +1,5 @@
- @import "tailwindcss";
-@import "tw-animate-css";
+/* Tailwind is now imported from src/index.css */
+/* Animation utilities (tw-animate-css) are imported in src/index.css */
 
 @custom-variant dark (&:is(.dark *));
 
