@@ -7,7 +7,7 @@ const Explore = () => {
      <div>    
        <div  className="container  ">
     <div>
-          <div className="mt-3xw-250 bg-black mt-20 rounded-4xl  text-2xl ml-52 mr-52  border-gray-600 flex flex-row   gap-3"> 
+          <div className="mt-3xw-250 bg-black mt-19 rounded-4xl  text-2xl ml-52 mr-52  border-gray-600 flex flex-row   gap-3"> 
        
       <CiSearch size={40} className="  m-2 absolute mr-20 "/>
          <input

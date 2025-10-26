@@ -12,10 +12,10 @@ import { Link } from 'react-router-dom'
   };
   
    return (
-     <div className="fixed top-0 z-50 w-full flex items-center gap-[245px] mr-[110px] 
+     <div className="fixed top-0 z-50 w-100 flex items-center gap-[245px] mr-[110px] 
     font-medium text-[1.2rem] text-gray-300   bg-opacity-35 backdrop-blur-sm border-b border-gray-800   mb-10" > 
          <Link
-          to="/"     onClick={() => handleActive("/")} > <img src="/logo.png" alt="" className="w-17 h-15 flex flex-row ml-1 rounded-5" /> </Link>
+          to="/"     onClick={() => handleActive("/")} > <img src="/logo.png" alt="" className="w-20 h-15 flex flex-row ml-1 rounded-5" /> </Link>
        <ul className="nav nav-pills flex space-x-4 text-bold text-white gap-8   lg:block">
       <li className="nav-item text-white">
         <Link

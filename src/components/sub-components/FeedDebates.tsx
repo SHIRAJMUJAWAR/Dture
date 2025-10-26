@@ -14,7 +14,7 @@ const FeedDebate = () => {
   };
 
   if (debates.length === 0) {
-    return (<div> <div className="items-center justify-center flex flex-col mt-10">
+    return (<div> <div className="items-center justify-center flex flex-col mt-11">
        <IoIosChatboxes size={100} className="text-green-600"/> 
        <h1>All Caught Up!</h1> <p className="text-gray-500"> Looks like youve joined all debates in <br /> your selected categeories. Explore more oR <br /> create your own!</p>
         <div className="items-center text-3xl text-gray-600 mt-20 ">

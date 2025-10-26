@@ -49,7 +49,7 @@ const Rooms = () => {
 
       <div className="mt-10">
         {activeTab === "active" && <Active />}
-        {activeTab === "ended" && <div className="text-white text-center">No Ended Debates Yet</div>}
+        {activeTab === "ended" && <div className="text-white text-center">No Ended Debates Yet stay notified</div>}
         {activeTab === "mine" && <MineDebate />}
       </div>
     </div>

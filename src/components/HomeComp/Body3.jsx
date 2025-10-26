@@ -6,7 +6,7 @@ import { FaFaceSmileWink } from "react-icons/fa6";
 
 const Body3 = () => {
   return (
-         <div className='  ml-30 mr-28 mb-5 p-10 border-b border-gray-800  '>
+         <div className='  ml-31 mr-28 mb-5 p-10 border-b border-gray-800  '>
        <div className="  flex fexl-col grid grid-cols-1  md:grid-cols-3 grid-cols-1 md:grid-row-3 gap-8">
   <div className="row-span-3 h- full w-90 rounded-3xl overflow-hidden">
     <img

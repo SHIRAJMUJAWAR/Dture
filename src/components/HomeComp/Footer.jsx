@@ -8,7 +8,7 @@ import { AiFillInstagram } from "react-icons/ai";
 const Footer = () => {
   return (  <div>
     <center  className='border-b border-gray-800 '>
-      <div className='w-30.5 h-30.5 mb-2 rounded rounded-4xl bg-sliver-500 item-center mt-20 mb-10'> 
+      <div className='w-30.5 h-30 mb-2 rounded rounded-4xl bg-sliver-500 item-center mt-20 mb-10'> 
         <img
   src="/logo.jpg"
   alt="Box Icon"

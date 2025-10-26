@@ -58,9 +58,8 @@ export const DebateProvider = ({ children }: DebateProviderProps) => {
         activeDebates,
         addActiveDebate,
         removeActiveDebate,
-      }}
-    >
-      {children}
+      }} >
+    {children}
     </DebateContext.Provider>
   );
 };

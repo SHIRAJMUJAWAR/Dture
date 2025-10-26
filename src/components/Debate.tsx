@@ -8,7 +8,7 @@ const Debate = () => {
   const { debates } = useContext(DebateContext); // get debates array
 
   return (
-    <div className="flex flex-wrap gap-5 justify-center mt-5">
+    <div className="flex flex-wrap gap-5 justify-center mt-6">
       {debates.map((debate) => (
         <div
           key={debate.id}

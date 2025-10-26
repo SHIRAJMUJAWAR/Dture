@@ -25,7 +25,7 @@ const Profile = () => {
     <div className="col">
       20
       <h1></h1>
-    <p className="text-xl font-sm mt-30"> Following</p>
+    <p className="text-xl  font-sm mt-30"> Following</p>
     </div>
     <div className="col">
     {debates.length}
@@ -35,7 +35,7 @@ const Profile = () => {
          
   </div>
  
-    <div>   <p className=" mt-50 text-2xl text-gray-500"> <br />A beta tester of Dture</p></div>
+    <div>   <p className=" mt-50 text-2xl text-gray-900"> <br />A beta tester of Dture</p></div>
   </div> 
         </div>
    

@@ -3,7 +3,7 @@ import { PiWarningCircle } from "react-icons/pi";
 
 const Wishlist = () => {
   return (
-    <div className='mt-50 mb-40 pop-in2'>
+    <div className='mt-50 mb-41 pop-in2'>
       <h1 className='text-6xl font-bold mb-8' >Claim Your Spot in the <br /> Revolution</h1>
       <h1 className='text-xl font-bold mb-1 text-gray-500'>Don't just watch it happen — lead it.</h1>
       <p  className='text-xl font-lg mb-12 text-gray-500'>Sign up now to get early access to Dtrue.</p>

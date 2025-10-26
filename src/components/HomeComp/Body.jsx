@@ -6,7 +6,7 @@ import Body3 from './Body3';
 
 const Body = () => {
   return (
-    <div className="text-center px-4">
+    <div className="text-center px-5">
 
       {/* Main Heading */}
       <h1 className="pop-in font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-28">

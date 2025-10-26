@@ -6,7 +6,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="fixed top-0 z-50 w-full flex items-center gap-[265px] mr-[110px] 
+    <div className="fixed top-0 z-50 w-full flex items-center gap-[266px] mr-[110px] 
     font-medium text-[1.2rem] text-gray-300   bg-opacity-35 backdrop-blur-sm border-b border-gray-800   mb-10">
    <img
   src="/logo.jpg"

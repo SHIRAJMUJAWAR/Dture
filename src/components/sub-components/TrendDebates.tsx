@@ -18,7 +18,7 @@ const TrendDebate = () => {
   return (
     <>
       {debates.length > 0 ? (
-        <div className="flex flex-wrap gap-5 justify-center mt-28">
+        <div className="flex flex-wrap gap-5 justify-center mt-29">
           {debates.map((debate) => (
             <div
               key={debate.id}

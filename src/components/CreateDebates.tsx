@@ -44,7 +44,7 @@ const CreateDebates = () => {
   };
 
   return (
-    <div className="container text-center mt-30 mb-10">
+    <div className="container text-center mt-29 mb-10">
       <div className="m-10 text-2xl ml-52 mr-52 mb-10 "> 
          <input
           className=" bg-gray-900 p-3  w-220 rounded-xl border-gray-600"

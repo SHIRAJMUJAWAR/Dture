@@ -12,7 +12,7 @@ const EnterDebate = () => {
 
   if (!debate) {
     return (
-      <div className="text-center text-white mt-20">
+      <div className="text-center text-white mt-25">
         <h2 className="text-2xl">No debate found 😅</h2>
         <p className="text-gray-400">Please go back and select a debate.</p>
       </div>

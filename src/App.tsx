@@ -10,10 +10,8 @@ import Trend from './components/Trend'
 import Home from './components/Home'
 import EnterDebate from './components/sub-components/EnterDebate'
  
-
 function App() {
  
-
   return (
     <>
        <Navbar></Navbar>

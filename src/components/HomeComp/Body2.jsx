@@ -5,7 +5,7 @@ import { MdSecurity } from "react-icons/md";
 
 const Body2 = () => {
   return (
-    <div className="mt-10 mb-20 px-4 sm:px-6 md:px-10  ">
+    <div className="mt-10 mb-21 px-4 sm:px-6 md:px-10  ">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 ml-20 mr-20">
 
         {/* Card 1 */}
