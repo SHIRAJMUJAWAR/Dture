@@ -18,7 +18,7 @@ const ExploreDebate = () => {
   return (
     <>
       {debates.length > 0 ? (
-        <div className="flex flex-wrap gap-5 justify-center mt-21">
+        <div className="flex flex-wrap gap-5 justify-center mt-10">
           {debates.map((debate) => (
             <div
               key={debate.id}

@@ -14,7 +14,7 @@ const MineDebate = () => {
   return (
     <>
       {debates.length > 0 ? (
-        <div className="flex flex-wrap gap-6 justify-center mt-9 px-4">
+        <div className="flex flex-wrap gap-6 justify-center mt-0 px-4">
           {debates.map((debate) => (
             <div
               key={debate.id}

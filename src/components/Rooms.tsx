@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Active from "./sub-components/Active";
 import MineDebate from "./sub-components/MineDebates";
+import EndedDebates from "./sub-components/EndedDebates";
  
 
 const Rooms = () => {
@@ -49,7 +50,7 @@ const Rooms = () => {
 
       <div className="mt-10">
         {activeTab === "active" && <Active />}
-        {activeTab === "ended" && <div className="text-white text-center">No Ended Debates Yet stay notified</div>}
+        {activeTab === "ended" && <EndedDebates/> }
         {activeTab === "mine" && <MineDebate />}
       </div>
     </div>

@@ -40,7 +40,7 @@ const Profile = () => {
         </div>
    
 <div  className="  flex flex-col items-center ">
-  <div className="items-center w-full bg-gray-900 rounded-4 mb-30 shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]                  
+  <div className="items-center w-full bg-gray-900 rounded-4 mb-20 shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]                  
                          transition-all duration-300 transform ">  
     <h1 className=" ml-159 text-xl font-bold text-gray-500 "> Debates </h1></div>
       

@@ -9,6 +9,8 @@ import Rooms from './components/Rooms'
 import Trend from './components/Trend'
 import Home from './components/Home'
 import EnterDebate from './components/sub-components/EnterDebate'
+import Notification from './components/sub-components/Notification'
+ 
  
 function App() {
  
@@ -23,8 +25,10 @@ function App() {
          <Route path="/explore" element={<Explore/>}/> 
           <Route path="/trend" element={<Trend/>}/> 
           <Route path="/create" element={<CreateDebates/>}/> 
-        <Route path="/entercreate/:id" element={<EnterDebate />} />
+          <Route path="/entercreate/:id" element={<EnterDebate />} />
+          <Route path="/notification" element={ <Notification/>}/> 
       </Routes>
+       
     </>
   )
 }

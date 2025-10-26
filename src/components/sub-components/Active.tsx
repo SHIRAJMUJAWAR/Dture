@@ -8,12 +8,12 @@ const Active = () => {
 
   if (activeDebates.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center mt-42 text-center px-4">
+      <div className="flex flex-col items-center justify-center mt-22 text-center px-4">
         <IoChatbubbles size={100} className="text-green-400 mb-4" />
         <h1 className="text-2xl font-bold text-white mb-2">
           No active debate rooms found
         </h1>
-        <p className="text-gray-400">
+        <p className="text-gray-500 text-2xl">
           Join a debate to see active rooms
         </p>
       </div>
