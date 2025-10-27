@@ -3,6 +3,7 @@ import { DebateContext } from "../../DebatesContext";
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosChatboxes, IoIosPeople } from "react-icons/io";
 import { MdOutlineExplore } from "react-icons/md";
+import VoteBar from "./Votebar";
 
 const FeedDebate = () => {
   const { debates, addActiveDebate } = useContext(DebateContext);
@@ -32,7 +33,7 @@ const FeedDebate = () => {
         <div
           key={debate.id}
           className="bg-black text-white rounded-2xl border border-gray-700 shadow-[0_0_20px_rgba(134,239,172,0.4)] p-3"
-          style={{ width: "25rem", height: "35rem" }}
+          style={{ width: "25rem", height: "37rem" }}
         >
           {debate.image && (
             <img
@@ -53,6 +54,7 @@ const FeedDebate = () => {
               <IoIosPeople /> Joined
             </button>
           </div>
+      <VoteBar agreeVotes={72} disagreeVotes={28} />  
           <div className="p-3 mt-auto">
             <button
               onClick={() => handleEnterDebate(debate)}

@@ -3,6 +3,7 @@ import { IoIosChatboxes, IoIosPeople } from "react-icons/io";
 import { DebateContext } from "../../DebatesContext";
 import { Link } from "react-router-dom";
 import { MdOutlineExplore } from "react-icons/md";
+import VoteBar from "./Votebar";
 
 const MineDebate = () => {
   const { debates, addActiveDebate } = useContext(DebateContext);
@@ -31,14 +32,14 @@ const MineDebate = () => {
                 />
               )}
 
-              <div className="p-5">
+              <div className="p-4">
                 <h5 className="text-xl font-bold text-green-400">{debate.name}</h5>
-                <p className="text-gray-300 mt-2 line-clamp-3">
+                <p className="text-gray-300 mt-1 line-clamp-3">
                   {debate.description}
                 </p>
               </div>
 
-              <ul className="px-5 text-sm text-gray-400 space-y-2">
+              <ul className="px-5 text-sm text-gray-400 space-y-">
                 <li>Duration: <span className="text-green-300">{debate.duration}</span></li>
                 <li className="font-semibold text-white">
                   Created by: <span className="text-green-400">Shiraj Mujawar</span>
@@ -47,7 +48,9 @@ const MineDebate = () => {
                   </button>
                 </li>
               </ul>
-
+               <div className="p-2">
+               <VoteBar agreeVotes={72} disagreeVotes={28} />                
+              </div>
               <div className="absolute bottom-0 left-0 w-full p-4">
                 <Link to={`/entercreate/${debate.id}`}>
                   <button

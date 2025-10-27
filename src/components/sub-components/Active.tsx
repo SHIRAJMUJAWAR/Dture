@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { DebateContext } from "../../DebatesContext";
 import { IoIosPeople } from "react-icons/io";
 import { IoChatbubbles } from "react-icons/io5";
+import VoteBar from "./Votebar";
 
 const Active = () => {
   const { activeDebates, removeActiveDebate } = useContext(DebateContext);
@@ -30,7 +31,7 @@ const Active = () => {
                      shadow-[0_0_15px_3px_rgba(74,222,128,0.3)] 
                      hover:shadow-[0_0_25px_5px_rgba(74,222,128,0.6)] 
                      transition-all duration-300 overflow-hidden"
-          style={{ width: "25rem", height: "32rem" }}
+          style={{ width: "25rem", height: "34rem" }}
         >
           {debate.image && (
             <img
@@ -40,7 +41,7 @@ const Active = () => {
             />
           )}
 
-          <div className="p-5">
+          <div className="p-3">
             <h5 className="text-xl font-bold text-green-400">{debate.name}</h5>
             <p className="text-gray-300 mt-2 line-clamp-3">
               {debate.description}
@@ -58,7 +59,9 @@ const Active = () => {
               </button>
             </li>
           </ul>
-
+                    <div className="p-1">
+               <VoteBar agreeVotes={72} disagreeVotes={28} />                
+              </div>
           <div className="absolute bottom-0 left-0 w-full p-4">
             <button
               onClick={() => removeActiveDebate(debate.id)}

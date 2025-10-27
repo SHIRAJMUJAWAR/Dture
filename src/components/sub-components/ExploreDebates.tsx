@@ -3,6 +3,7 @@ import { IoIosPeople } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { DebateContext } from "../../DebatesContext";
 import { IoCompass } from "react-icons/io5";
+import VoteBar from "./Votebar";
 
 const ExploreDebate = () => {
   const {
@@ -26,7 +27,7 @@ const ExploreDebate = () => {
                          shadow-[0_0_25px_4px_rgba(134,239,172,0.4)] 
                          hover:shadow-[0_0_35px_6px_rgba(134,239,172,0.7)] 
                          transition-all duration-300 transform hover:-translate-y-1"
-              style={{ width: "25rem", height: "35rem" }}
+              style={{ width: "25rem", height: "34rem" }}
             >
               {/* Debate Image */}
               {debate.image && (
@@ -48,12 +49,15 @@ const ExploreDebate = () => {
               </div>
 
               {/* Creator + Duration */}
-              <div className="border-t border-green-300 p-4 text-sm">
+              <div className="border-t border-green-300 p-3 text-sm">
                 <p>⏳ Duration: {debate.duration}</p>
                 <p className="font-semibold mt-2">
                   Created by:{" "}
                   <span className="text-green-400">Shiraj Mujawar</span>
                 </p>
+              </div>
+              <div className="p-1">
+               <VoteBar agreeVotes={72} disagreeVotes={28} />                
               </div>
 
               {/* Buttons */}

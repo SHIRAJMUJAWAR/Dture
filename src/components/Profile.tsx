@@ -1,14 +1,19 @@
  import { useContext } from "react";
 import MineDebate from "./sub-components/MineDebates"
 import { DebateContext } from "../DebatesContext";
+import { BiLogOut } from "react-icons/bi";
 
 const Profile = () => {
 
    const { debates } = useContext(DebateContext); // get debates array
 
-  return (
-    <div className="text-white p-5 rounded-2xl space-y-5" >
-        <div className=" rounded-2xl object-cover mt-20 "  > 
+  return ( <> 
+  <div className="mt-20 ml-350 mt-10 bg-red-500 rounded-5 shadow-[0_0_25px_4px_rgba(255,0,0,0.6)] hover: shadow-[0_0_25px_4px_rgba(255,0,0,0.6)]  ">
+     <button className="  flex flex-row rounded-5 p-2  "> <BiLogOut className="m-1"  size={20}/>Sign Out</button>
+  </div>
+    <div className="text-white p-4 rounded-2xl space-y-5" >
+        
+        <div className=" rounded-2xl object-cover   "  > 
             <div className="   h-71 bg-gray-900 rounded-2xl p-10  flex flex-row mb-10 shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]  
                          transition-all duration-300 transform  ">
            <div className="ml-30"> <img src="\shiraj.jpg" alt="" className="w-30  rounded-5" />   
@@ -29,28 +34,28 @@ const Profile = () => {
     </div>
     <div className="col">
     {debates.length}
-    <h1></h1>
+    <h1> </h1>
     <p className="text-xl font-sm mt-30"> Debates</p>
     </div>
-         
+       <p className=" mt-50 text-2xl text-gray-900"> <br />A beta tester of Dture</p>   
   </div>
  
-    <div>   <p className=" mt-50 text-2xl text-gray-900"> <br />A beta tester of Dture</p></div>
+    <div>  </div>
   </div> 
         </div>
-   
+ 
 <div  className="  flex flex-col items-center ">
   <div className="items-center w-full bg-gray-900 rounded-4 mb-20 shadow-[0_0_25px_4px_rgba(134,239,172,0.4)]                  
                          transition-all duration-300 transform ">  
     <h1 className=" ml-159 text-xl font-bold text-gray-500 "> Debates </h1></div>
-      
+  
     </div>     
     <MineDebate ></MineDebate>
         </div>
          
        
     </div>
-  )
+  </>)
 }
 
 export default Profile

@@ -3,6 +3,7 @@ import { IoIosPeople } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { DebateContext } from "../../DebatesContext";
 import { HiTrendingUp } from "react-icons/hi";
+import VoteBar from "./Votebar";
 
 const TrendDebate = () => {
   const {
@@ -45,13 +46,15 @@ const TrendDebate = () => {
                 </p>
               </div>
 
-              <div className="border-t border-green-300 p-4 text-sm">
+              <div className="border-t border-green-300 p-2 text-sm">
                 <p>⏳ Duration: {debate.duration}</p>
                 <p className="font-semibold mt-2">
                   Created by: <span className="text-green-400">Shiraj Mujawar</span>
                 </p>
               </div>
-
+      <div className="p-2">
+               <VoteBar agreeVotes={72} disagreeVotes={28} />                
+              </div>
               <div className="flex justify-between items-center px-4 pb-4">
                 <button
                   onClick={() =>
@@ -70,7 +73,7 @@ const TrendDebate = () => {
                   <IoIosPeople />
                   {isActive(debate.id) ? "Joined" : "Join"}
                 </button>
-
+                 
                 <Link to={`/entercreate/${debate.id}`}>
                   <button className="bg-green-600 hover:bg-green-500 text-white text-sm font-semibold px-4 py-2 rounded-md transition-all duration-300">
                     Enter Debate
