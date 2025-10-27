@@ -9,11 +9,8 @@
 ---
 
 ## Demo
-Add your demo GIF or screenshot here:
 
-`![demo](./docs/demo.gif)`
-
-Or link to a deployed site (Netlify / Vercel).
+` https://dture.netlify.app/`
 
 ---
 
@@ -22,24 +19,23 @@ Or link to a deployed site (Netlify / Vercel).
 - Roles: Speaker, Opponent, Audience  
 - Real-time chat & reactions  
 - Upvote/Downvote arguments and decide winners  
-- Leaderboards & debate history  
+- Leaderboards  
 - Responsive UI (mobile & desktop)  
-- Simple auth (email / GitHub / OAuth) — optional
-
+- Simple auth  
 ---
 
 ## Tech Stack
-- Frontend: React / Next.js (or plain React)  
-- Styling: Tailwind CSS (or your CSS framework)  
-- Real-time: WebSockets / Socket.IO / Firebase Realtime / Supabase Realtime  
-- Backend: Node.js + Express / Next.js API routes / Firebase functions  
-- Database: PostgreSQL / MongoDB / Firebase / Supabase  
-- Deployment: Vercel / Netlify / Heroku
+- Frontend: React  
+- Styling: Tailwind CSS    
+- Real-time:  Firebase Realtime  
+- Backend: Node.js + Express  
+- Database:  MongoDB 
+- Deployment:   Netlify 
 
 ---
 
 ## Quick Start (local)
 1. Clone the repo  
    ```bash
-   git clone https://github.com/<your-username>/online-debate-app.git
-   cd online-debate-app 
+  [ git clone https://github.com/SHIRAJMUJAWAR/Dture.git
+   cd online-debate-app ] 
